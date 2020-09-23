@@ -55,27 +55,32 @@ function handleForm(event) {
                 	 copstatus.innerHTML = "Co-pilot Ready: ";
                 	 copstatus.innerHTML += cname.value;
                 	 copstatus.innerHTML += " is ready for launch!";
-
-                	 if (flevel.value < 10000){
-                        	 fItems.style.visibility = "visible";
-				 fstatus.innerHTML = "There is not enough fuel for the journey!";
-                        	 lStatus.innerHTML = "Shuttle not ready for launch";
-                        	 lStatus.style.color = "red";
-                 	} else {
-				 fstatus.innerHTML = "Fuel level high enough for launch";
-			 }
-			 if (cmass.value > 10000){
-				 fItems.style.visibility = "visible";
-				 cstatus.innerHTML = "There is too much mass for the shuttle to take off!";
-                                 lStatus.innerHTML = "Shuttle not ready for launch";
-                                 lStatus.style.color = "red";
-			} else { 
-                                 cstatus.innerHTML = "Cargo mass low enough for launch";
-                         }
-			 if (cmass.value < 10000 && flevel.value > 10000) {
-				 fItems.style.visibility = "visible";
+			  if (cmass.value < 10000 && flevel.value > 10000) {
+                                 fItems.style.visibility = "visible";
                                  lStatus.innerHTML = "Shuttle is ready for launch!";
                                  lStatus.style.color = "green";
+                        }     else{
+                		 if (flevel.value < 10000){
+                        		 fItems.style.visibility = "visible";
+					 fstatus.innerHTML = "There is not enough fuel for the journey!";
+                        		 lStatus.innerHTML = "Shuttle not ready for launch";
+                        		 lStatus.style.color = "red";
+                 		} else {
+					 fstatus.innerHTML = "Fuel level high enough for launch";
+				 }
+				 if (cmass.value > 10000){
+					 fItems.style.visibility = "visible";
+					 cstatus.innerHTML = "There is too much mass for the shuttle to take off!";
+                                	 lStatus.innerHTML = "Shuttle not ready for launch";
+                                	 lStatus.style.color = "red";
+				} else { 
+                                	 cstatus.innerHTML = "Cargo mass low enough for launch";
+                        	 }
+				 if (cmass.value < 10000 && flevel.value > 10000) {
+					 fItems.style.visibility = "visible";
+                                	 lStatus.innerHTML = "Shuttle is ready for launch!";
+                                	 lStatus.style.color = "green";
+				}
 			}
 				
                 }
